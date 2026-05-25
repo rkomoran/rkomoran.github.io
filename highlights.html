@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Highlights — Rinor Komorani</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
   <style>
@@ -299,6 +300,14 @@
       .frog-corner { bottom:0; left:0; height:80px; image-rendering:auto; pointer-events:none; position:fixed; width:auto; z-index:5; }
     .frog-corner-mobile { display:none; }
     @media screen and (max-width: 1019px) { .frog-corner { display:none; } .frog-corner-mobile { display:block; text-align:left; padding: 1rem 1.5rem 1.5rem; } .frog-corner-mobile img { height:80px; width:auto; image-rendering:auto; } }
+  
+    .frog-bubble { animation: frogPop .25s cubic-bezier(.34,1.56,.64,1) forwards; background: var(--gray-8); border: 2px solid var(--color-primary); border-radius: 8px; bottom: 90px; color: var(--color-primary); display: none; font-family: 'Press Start 2P', monospace; font-size: 9px; left: 8px; line-height: 1.6; padding: 7px 10px; pointer-events: none; position: fixed; white-space: nowrap; z-index: 20; }
+    .frog-bubble::after { border: 6px solid transparent; border-top-color: var(--color-primary); bottom: -14px; content: ''; left: 18px; position: absolute; }
+    .frog-bubble::before { border: 6px solid transparent; border-top-color: var(--gray-8); bottom: -11px; content: ''; left: 18px; position: absolute; z-index: 1; }
+    .frog-bubble.visible { display: block; }
+    .frog-bubble.hide { animation: frogFade .3s ease forwards; }
+    @keyframes frogPop { from { opacity:0; transform: scale(.6) translateY(6px); } to { opacity:1; transform: scale(1) translateY(0); } }
+    @keyframes frogFade { from { opacity:1; } to { opacity:0; } }
   </style>
   <link rel="icon" type="image/png" href="brand_assets/ksdxvlnkwosa1.png" />
 </head>
@@ -500,8 +509,53 @@
   </script>
 
   <img src="brand_assets/frog-jump.gif" alt="" class="frog-corner" />
+  <div class="frog-bubble" id="frog-bubble"></div>
   <div class="frog-corner-mobile"><img src="brand_assets/frog-jump.gif" alt="" /></div>
 
 
+
+  <script id="frog-script">
+    (function() {
+      const sounds = ['*ribbit*', '*croak*', '*brrp*', '*ribbit ribbit*', '*CROAK*', '*mrrp*', '*ribbit?*', '*...ribbit*'];
+      const bubble = document.getElementById('frog-bubble');
+      let timer;
+      function speak() {
+        clearTimeout(timer);
+        bubble.classList.remove('hide');
+        bubble.classList.add('visible');
+        bubble.textContent = sounds[Math.floor(Math.random() * sounds.length)];
+        timer = setTimeout(() => {
+          bubble.classList.add('hide');
+          setTimeout(() => { bubble.classList.remove('visible', 'hide'); }, 300);
+        }, 2000);
+      }
+      // Desktop fixed frog
+      const frogCorner = document.querySelector('.frog-corner');
+      if (frogCorner) {
+        frogCorner.style.pointerEvents = 'auto';
+        frogCorner.style.cursor = 'pointer';
+        frogCorner.addEventListener('click', speak);
+      }
+      // Mobile in-flow frog
+      const frogMobile = document.querySelector('.frog-corner-mobile img');
+      if (frogMobile) {
+        frogMobile.style.cursor = 'pointer';
+        frogMobile.addEventListener('click', function() {
+          clearTimeout(timer);
+          bubble.style.position = 'relative';
+          bubble.style.bottom = 'auto';
+          bubble.style.left = 'auto';
+          bubble.style.display = 'inline-block';
+          bubble.classList.remove('hide');
+          bubble.classList.add('visible');
+          bubble.textContent = sounds[Math.floor(Math.random() * sounds.length)];
+          timer = setTimeout(() => {
+            bubble.classList.add('hide');
+            setTimeout(() => { bubble.classList.remove('visible', 'hide'); bubble.style.position = ''; bubble.style.bottom = ''; bubble.style.left = ''; bubble.style.display = ''; }, 300);
+          }, 2000);
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
