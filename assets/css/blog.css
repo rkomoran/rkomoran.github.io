@@ -162,7 +162,8 @@
 .highlight-card-desc { color: var(--color-text-muted); font-size: .88rem; line-height: 1.65; margin: 0 0 .9rem; }
 .highlight-card-links { display: flex; flex-wrap: wrap; gap: .5rem; }
 .highlight-card-photo { border-top: 1px solid var(--color-border); overflow: hidden; position: relative; }
-.highlight-card-photo img { display: block; height: 380px; object-fit: cover; object-position: center center; width: 100%; transition: transform .3s ease; }
+.highlight-card-photo img { display: block; height: 220px; object-fit: cover; object-position: center center; width: 100%; transition: transform .3s ease; }
+@media screen and (min-width: 600px) { .highlight-card-photo img { height: 380px; } }
 .highlight-card:hover .highlight-card-photo img { transform: scale(1.015); }
 .highlight-card-photo-caption { background: linear-gradient(to top, rgba(13,13,17,.85) 0%, transparent 100%); bottom: 0; color: var(--color-text-muted); font-size: 12px; left: 0; padding: .75rem 1rem .6rem; position: absolute; right: 0; }
 .highlight-card-video { border-top: 1px solid var(--color-border); position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
