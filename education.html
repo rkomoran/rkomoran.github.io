@@ -3,172 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Education — Rinor Komorani</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --gray-0: #fbfbfb;
-      --gray-1: #eee;
-      --gray-2: #e4e4e7;
-      --gray-3: #d4d4d8;
-      --gray-4: #c8c8cf;
-      --gray-5: #a1a1a8;
-      --gray-6: #4e4e55;
-      --gray-7: #323239;
-      --gray-8: #25252b;
-      --gray-9: #1c1c20;
-      --gray-10: #1d1d22;
-      --gray-11: #16161a;
-      --gray-12: #0d0d11;
-
-      --theme-blue: #6ab0f3;
-      --theme-green: #92d192;
-      --yellow: #ffd479;
-
-      --color-primary: var(--theme-blue);
-      --color-text-link: var(--color-primary);
-      --color-text-link-hover: var(--color-primary);
-
-      --font-family: "Outfit", -apple-system, BlinkMacSystemFont, Avenir, Helvetica, Arial, sans-serif;
-      --font-family-heading: "Outfit", -apple-system, BlinkMacSystemFont, "DM Sans", Avenir, Helvetica, Arial, sans-serif;
-      --font-family-monospace: Menlo, "Google Sans Code", monospace;
-
-      --border-radius: 6px;
-      --navbar-height: 60px;
-      --sidebar-width: 220px;
-      --content-width: 760px;
-
-      --color-background: var(--gray-9);
-      --color-background-alternate: var(--gray-11);
-      --color-background-navbar: var(--gray-9);
-      --color-background-sidebar: var(--gray-9);
-      --color-background-card: var(--gray-8);
-      --color-background-input: var(--gray-11);
-      --color-background-navbar-link-hover: var(--gray-8);
-      --color-background-navbar-link-active: var(--gray-7);
-      --color-background-button: var(--gray-8);
-      --color-background-button-hover: hsla(0,0%,100%,.05);
-      --color-background-button-secondary: var(--gray-8);
-      --color-background-button-secondary-hover: hsla(0,0%,100%,.05);
-
-      --color-text: var(--gray-3);
-      --color-text-emphasized: var(--gray-0);
-      --color-text-muted: var(--gray-5);
-      --color-text-heading-muted: var(--gray-3);
-      --color-text-navbar-link: var(--gray-1);
-      --color-text-navbar-link-hover: var(--gray-0);
-      --color-text-button: var(--gray-0);
-      --color-text-button-hover: var(--color-primary);
-      --color-text-button-secondary: var(--gray-0);
-      --color-text-button-secondary-hover: var(--color-primary);
-
-      --color-border: var(--gray-7);
-      --color-border-hover: var(--gray-5);
-      --color-border-card: var(--gray-7);
-      --color-border-button: var(--gray-7);
-      --color-border-button-hover: var(--color-primary);
-      --color-border-button-secondary: var(--gray-7);
-      --color-border-button-secondary-hover: var(--color-primary);
-
-      --box-shadow: 0px 4px 7px rgba(0,1,2,.3), 0px 2px 2px rgba(0,1,2,.3), 0px 1px 1px rgba(0,1,2,.3);
-
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      background-color: var(--color-background);
-      color: var(--color-text);
-      font-family: var(--font-family);
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; }
-    body { margin: 0; }
-    a { color: var(--color-text-link); font-weight: 500; text-decoration: none; }
-    a:hover { color: var(--color-text-link-hover); text-decoration: underline; }
-    img { display: block; max-width: 100%; }
-
-    .button, a.button { align-items: center; background: var(--color-background-button); border: 2px solid var(--color-border-button); border-radius: var(--border-radius); color: var(--color-text-button); cursor: pointer; display: inline-flex; font-size: 1rem; font-family: var(--font-family); font-weight: 600; gap: .35rem; line-height: 1; padding: 10px 16px; text-decoration: none !important; transition: background .1s ease, border-color .1s ease, color .1s ease; white-space: nowrap; }
-    a.button:hover { background: var(--color-background-button-hover); border-color: var(--color-border-button-hover); color: var(--color-text-button-hover); text-decoration: none !important; }
-    a.button:active { transform: scale(.95); }
-    a.button.secondary { background: var(--color-background-button-secondary); border-color: var(--color-border-button-secondary); color: var(--color-text-button-secondary); }
-    a.button.secondary:hover { background: var(--color-background-button-secondary-hover); border-color: var(--color-border-button-secondary-hover); color: var(--color-text-button-secondary-hover); }
-    a.button.small { font-size: 13px; padding: 5px 10px; font-weight: 600; }
-
-    .navbar { background: var(--color-background-navbar); border-bottom: 1px solid var(--color-border); display: flex; align-items: center; height: var(--navbar-height); gap: 1rem; justify-content: space-between; left: 0; padding: 0 .75rem 0 1.25rem; position: fixed; top: 0; width: 100%; z-index: 10; }
-    .navbar-title { display: flex; align-items: center; }
-    a.navbar-title-link { align-items: center; background: hsla(0,0%,6%,.5); border-radius: var(--border-radius); color: var(--color-text-navbar-link); display: flex; font-weight: 600; gap: .65rem; padding: .3rem .65rem; text-decoration: none; white-space: nowrap; }
-    a.navbar-title-link:hover { background: rgba(0,0,0,.55); color: var(--gray-0); text-decoration: none; }
-    .navbar-logo { border-radius: 50%; height: 28px; min-height: 28px; min-width: 28px; object-fit: cover; width: 28px; }
-    .site-name { font-family: var(--font-family-heading); font-size: 15px; font-weight: 600; white-space: nowrap; }
-    .navbar-icons { display: flex; gap: 2px; align-items: center; }
-    a.navbar-icon { align-items: center; border-radius: var(--border-radius); color: var(--gray-4); display: flex; height: 38px; justify-content: center; text-decoration: none; width: 38px; }
-    a.navbar-icon:hover { background: var(--color-background-navbar-link-hover); color: var(--gray-0); text-decoration: none; }
-    @media screen and (min-width: 1020px) { .navbar { display: none; } }
-
-    .layout { padding-top: var(--navbar-height); }
-    @media screen and (min-width: 1020px) { .layout { display: grid; grid-template-columns: var(--sidebar-width) 1fr; margin: 0 auto; max-width: calc(var(--content-width) + var(--sidebar-width) + 4rem); padding-top: 0; } }
-
-    .sidebar { background: var(--color-background-sidebar); border-right: 1px solid var(--color-border); display: none; height: 100vh; min-width: var(--sidebar-width); overflow-y: auto; position: sticky; top: 0; width: var(--sidebar-width); }
-    @media screen and (min-width: 1020px) { .sidebar { display: block; } }
-    .sidebar-top { align-items: center; display: flex; gap: .65rem; padding: 1.25rem 1.25rem .75rem; border-bottom: 1px solid var(--color-border); text-decoration: none; }
-    .sidebar-top:hover { text-decoration: none; }
-    .sidebar-top:hover .site-name { text-decoration: underline; }
-    .sidebar-avatar { border-radius: var(--border-radius); height: 42px; object-fit: cover; width: 42px; flex-shrink: 0; }
-    .sidebar-name { color: var(--color-text-emphasized); font-family: var(--font-family-heading); font-size: 15px; font-weight: 600; white-space: nowrap; }
-    .sidebar-about { padding: 1rem 1.25rem 1.25rem; border-bottom: 1px solid var(--color-border); }
-    .sidebar-about p { color: var(--color-text-muted); font-size: 13px; line-height: 1.6; margin: 0; }
-    .sidebar-about p a { color: var(--color-text-link); }
-    .sidebar-nav { padding: .75rem 1.25rem 1.25rem; border-bottom: 1px solid var(--color-border); }
-    .sidebar-nav-links { display: flex; flex-direction: column; gap: 2px; }
-    .sidebar-nav-links a { align-items: center; border-radius: var(--border-radius); color: var(--color-text); display: flex; font-size: 15px; font-weight: 500; gap: .5rem; margin-left: -.4rem; padding: 5px .4rem; text-decoration: none; }
-    .sidebar-nav-links a:hover, .sidebar-nav-links a.active { background: var(--color-background-navbar-link-hover); color: var(--color-text-emphasized); text-decoration: none; }
-    .sidebar-connected { padding: .75rem 1.25rem 1.5rem; }
-    .sidebar-connected-heading { color: var(--color-text-muted); font-size: 11px; font-weight: 600; letter-spacing: .08em; margin-bottom: .6rem; text-transform: uppercase; }
-    .sidebar-connected-links { display: flex; flex-direction: column; gap: 4px; }
-    .sidebar-connected-links a { color: var(--color-text-muted); font-size: 13px; font-weight: 400; text-decoration: none; padding: 1px 0; }
-    .sidebar-connected-links a:hover { color: var(--gray-0); text-decoration: none; }
-
-    .main-wrapper { min-height: 100vh; }
-    .main-content { margin-left: auto; margin-right: auto; max-width: var(--content-width); padding: 2rem 1.5rem 4rem; }
-    @media screen and (min-width: 800px) { .main-content { padding: 2.5rem 2rem 5rem; } }
-
-    .section { margin-bottom: 3rem; }
-    .section-heading { align-items: center; display: flex; gap: .65rem; margin-bottom: .4rem; }
-    .section-heading h2 { color: var(--color-text-emphasized); font-family: var(--font-family-heading); font-size: 1.6rem; font-weight: 700; line-height: 1.2; margin: 0; }
-    @media screen and (min-width: 800px) { .section-heading h2 { font-size: 1.9rem; } }
-    .section-desc { color: var(--color-text-muted); font-size: .9rem; margin: 0 0 .9rem; }
-    .section-divider { border: none; border-top: 1px solid var(--color-border); margin-bottom: 1rem; }
-
-    .post-row { border-bottom: 1px solid var(--color-border); display: flex; flex-direction: column; padding: 7px 0; }
-    .post-row .post-row-inner { align-items: center; display: flex; font-weight: 600; gap: .5rem; margin: 0; color: var(--color-text-emphasized); }
-    .post-row time { color: var(--color-text-muted); font-size: 13px; font-weight: 400; white-space: nowrap; }
-    @media screen and (min-width: 900px) { .post-row { flex-direction: row; align-items: center; font-size: 1.05rem; padding: 5px 0; } .post-row time { font-size: .88rem; min-width: 135px; width: 135px; } }
-
-    .chip { align-items: center; border: 1px solid var(--color-border); border-radius: 16px; color: var(--color-text-muted); display: inline-flex; font-size: .75rem; font-weight: 500; padding: 2px 8px; white-space: nowrap; }
-
-    .footer { border-top: 1px solid var(--color-border); font-size: 13px; padding: 0; }
-    .footer-inner { display: flex; flex-direction: column; gap: 1rem; margin: 0 auto; max-width: var(--content-width); padding: 1.5rem 1.5rem; }
-    @media screen and (min-width: 800px) { .footer-inner { flex-direction: row; align-items: center; justify-content: space-between; padding: 1.5rem 2rem; } }
-    .footer-links { display: flex; gap: .75rem; flex-wrap: wrap; }
-    a.footer-link { color: var(--color-text-muted); white-space: nowrap; }
-    a.footer-link:hover { color: var(--color-text-link-hover); text-decoration: underline; }
-    .footer-made { color: var(--color-text-muted); }
-      .frog-corner { bottom:0; left:0; height:80px; image-rendering:auto; pointer-events:none; position:fixed; width:auto; z-index:5; }
-    .frog-corner-mobile { display:none; }
-    @media screen and (max-width: 1019px) { .frog-corner { display:none; } .frog-corner-mobile { display:block; text-align:left; padding: 1rem 1.5rem 1.5rem; } .frog-corner-mobile img { height:80px; width:auto; image-rendering:auto; -webkit-tap-highlight-color: transparent; cursor: pointer; } }
-  
-    .frog-bubble { animation: frogPop .25s cubic-bezier(.34,1.56,.64,1) forwards; background: var(--gray-8); border: 2px solid var(--color-primary); border-radius: 8px; bottom: 90px; color: var(--color-primary); display: none; font-family: 'Press Start 2P', monospace; font-size: 9px; left: 8px; line-height: 1.6; padding: 7px 10px; pointer-events: none; position: fixed; white-space: nowrap; z-index: 20; }
-    .frog-bubble::after { border: 6px solid transparent; border-top-color: var(--color-primary); bottom: -14px; content: ''; left: 18px; position: absolute; }
-    .frog-bubble::before { border: 6px solid transparent; border-top-color: var(--gray-8); bottom: -11px; content: ''; left: 18px; position: absolute; z-index: 1; }
-    .frog-bubble.visible { display: block; }
-    .frog-bubble.hide { animation: frogFade .3s ease forwards; }
-    @keyframes frogPop { from { opacity:0; transform: scale(.6) translateY(6px); } to { opacity:1; transform: scale(1) translateY(0); } }
-    @keyframes frogFade { from { opacity:1; } to { opacity:0; } }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" href="brand_assets/ksdxvlnkwosa1.png" />
+<title>Education — Rinor Komorani</title>
 </head>
 <body>
 
@@ -251,39 +92,9 @@
     </div>
   </div>
 
-  <img src="brand_assets/frog-jump.gif" alt="" style="bottom:0;left:0;height:120px;image-rendering:auto;pointer-events:none;position:fixed;width:auto;z-index:5;" />
+  <img src="brand_assets/frog-jump.gif" alt="" class="frog-corner" />
+  <div class="frog-bubble" id="frog-bubble"></div>
+  <script src="main.js"></script>
 
-
-  <script id="frog-script">
-    (function() {
-      const sounds = ['*ribbit*', '*croak*', '*brrp*', '*ribbit ribbit*', '*CROAK*', '*mrrp*', '*ribbit?*', '*...ribbit*'];
-      const bubble = document.getElementById('frog-bubble');
-      let timer;
-      function speak() {
-        clearTimeout(timer);
-        bubble.classList.remove('hide');
-        bubble.classList.add('visible');
-        bubble.textContent = sounds[Math.floor(Math.random() * sounds.length)];
-        timer = setTimeout(() => {
-          bubble.classList.add('hide');
-          setTimeout(() => { bubble.classList.remove('visible', 'hide'); }, 300);
-        }, 2000);
-      }
-      // Desktop fixed frog
-      const frogCorner = document.querySelector('.frog-corner');
-      if (frogCorner) {
-        frogCorner.style.pointerEvents = 'auto';
-        frogCorner.style.cursor = 'pointer';
-        frogCorner.addEventListener('click', speak);
-      }
-      // Mobile in-flow frog
-      const frogMobile = document.querySelector('.frog-corner-mobile img');
-      if (frogMobile) {
-        frogMobile.style.cursor = 'pointer';
-        frogMobile.style.webkitTapHighlightColor = 'transparent';
-        frogMobile.addEventListener('click', speak);
-      }
-    })();
-  </script>
 </body>
 </html>

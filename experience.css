@@ -1,0 +1,93 @@
+/* ── Expandable experience rows ── */
+.exp-row {
+  border-bottom: 1px solid var(--color-border);
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 0 .9rem;
+  padding: .75rem .25rem;
+  user-select: none;
+  transition: background .12s ease;
+  border-radius: var(--border-radius);
+}
+.exp-row:last-of-type { border-bottom: none; }
+.exp-row:hover { background: var(--color-background-navbar-link-hover); }
+
+.exp-logo-wrap {
+  align-items: center;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,.1);
+  display: flex;
+  flex-shrink: 0;
+  height: 44px;
+  justify-content: center;
+  overflow: hidden;
+  padding: 6px;
+  width: 44px;
+  grid-row: 1 / 2;
+  align-self: start;
+  margin-top: 1px;
+  background: #fff;
+}
+.exp-logo-wrap.on-dark {
+  background: var(--gray-8);
+  border-color: var(--color-border);
+  padding: 7px;
+}
+.exp-logo-wrap img {
+  display: block;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+  width: 100%;
+}
+
+.exp-row-inner {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem .5rem;
+  font-weight: 600;
+  color: var(--color-text-emphasized);
+  font-size: .97rem;
+  line-height: 1.4;
+}
+
+.exp-row-meta {
+  align-items: center;
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  margin-top: .2rem;
+}
+
+.exp-row time {
+  color: var(--color-text-muted);
+  font-size: .8rem;
+  font-weight: 400;
+}
+
+.exp-toggle {
+  color: var(--color-text-muted);
+  font-size: .65rem;
+  margin-left: auto;
+  transition: transform .2s ease;
+  align-self: center;
+}
+.exp-row.open .exp-toggle { transform: rotate(180deg); }
+
+.exp-details {
+  grid-column: 2 / 3;
+  font-size: .875rem;
+  line-height: 1.65;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .32s ease, padding .32s ease;
+}
+.exp-row.open .exp-details {
+  max-height: 500px;
+  padding-top: .5rem;
+}
+.exp-details ul { margin: 0; padding-left: 1.15rem; }
+.exp-details li { color: var(--color-text-muted); padding-bottom: .25rem; }
+.exp-details li::marker { color: var(--gray-6); }

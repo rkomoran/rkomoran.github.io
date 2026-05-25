@@ -1,0 +1,19 @@
+/* highlights.html reuses all highlight-card styles from blog.css */
+/* This file exists as an import alias — link both highlights.css and blog.css,
+   or simply link blog.css directly from highlights.html. */
+
+/* ── Tag buttons (highlights variant, slightly different to projects) ── */
+.tag-btn {
+  align-items: center;
+  background: var(--gray-7);
+  border: 1px solid var(--gray-6);
+  border-radius: var(--border-radius);
+  color: var(--color-text-muted);
+  display: inline-flex;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  text-decoration: none;
+  transition: border-color .1s, color .1s, background .1s;
+}
+.tag-btn:hover { border-color: var(--color-primary); color: var(--color-primary); background: var(--gray-8); text-decoration: none; }

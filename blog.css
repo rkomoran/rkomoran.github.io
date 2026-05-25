@@ -1,0 +1,169 @@
+/* ── Log entries ── */
+.log-entry {
+  border-bottom: 1px solid var(--color-border);
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: .5rem 1rem;
+  padding: .75rem 0;
+}
+.log-entry:last-of-type { border-bottom: none; }
+.log-entry time {
+  color: var(--color-text-muted);
+  font-size: .82rem;
+  padding-top: .15rem;
+  white-space: nowrap;
+}
+.log-entry-body {
+  color: var(--color-text);
+  font-size: .95rem;
+  line-height: 1.65;
+}
+.log-entry-body a { color: var(--color-text-link); font-weight: 500; text-decoration: underline; }
+.log-entry-body a:hover { color: var(--color-text-link-hover); }
+
+/* ── Photo grid ── */
+.photo-grid {
+  columns: 2;
+  gap: .6rem;
+}
+@media screen and (min-width: 600px) { .photo-grid { columns: 3; gap: .75rem; } }
+.photo-grid-item {
+  break-inside: avoid;
+  border-radius: var(--border-radius);
+  display: block;
+  margin-bottom: .6rem;
+  overflow: hidden;
+  width: 100%;
+}
+.photo-grid-item img {
+  border-radius: var(--border-radius);
+  display: block;
+  object-fit: cover;
+  transition: opacity .2s ease;
+  width: 100%;
+}
+.photo-grid-item img:hover { opacity: .85; cursor: zoom-in; }
+
+/* ── Lightbox ── */
+.lightbox {
+  align-items: center;
+  background: rgba(13,13,17,.92);
+  backdrop-filter: blur(8px);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  opacity: 0;
+  padding: 1.5rem;
+  pointer-events: none;
+  position: fixed;
+  transition: opacity .25s ease;
+  z-index: 100;
+}
+.lightbox.open { opacity: 1; pointer-events: all; }
+.lightbox-img {
+  border-radius: 8px;
+  box-shadow: 0 24px 80px rgba(0,0,0,.7);
+  max-height: 90vh;
+  max-width: 100%;
+  object-fit: contain;
+  transform: scale(.95);
+  transition: transform .25s ease;
+}
+.lightbox.open .lightbox-img { transform: scale(1); }
+.lightbox-close {
+  align-items: center;
+  background: var(--gray-8);
+  border: 1px solid var(--gray-7);
+  border-radius: 50%;
+  color: var(--gray-3);
+  cursor: pointer;
+  display: flex;
+  height: 36px;
+  justify-content: center;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  transition: background .15s, color .15s;
+  width: 36px;
+}
+.lightbox-close:hover { background: var(--gray-7); color: var(--gray-0); }
+.photo-grid-empty { color: var(--color-text-muted); font-size: .9rem; font-style: italic; }
+
+/* ── Blog year groups ── */
+.blog-year-group { margin-bottom: 2.5rem; }
+.blog-year-header {
+  align-items: center;
+  display: flex;
+  gap: .65rem;
+  margin-bottom: .75rem;
+}
+.blog-year-header h2 {
+  color: var(--color-text-emphasized);
+  font-family: var(--font-family-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+.blog-post-count {
+  align-items: center;
+  background: var(--gray-8);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  color: var(--color-text-muted);
+  display: inline-flex;
+  font-size: .72rem;
+  font-weight: 500;
+  padding: 2px 8px;
+  white-space: nowrap;
+}
+
+/* ── Highlight cards (also used in highlights.html) ── */
+.highlight-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+.highlight-card {
+  background: var(--color-background-card);
+  border: 1px solid var(--color-border-card);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  transition: border-color .15s;
+}
+.highlight-card:hover { border-color: var(--gray-6); }
+.highlight-card-header {
+  align-items: center;
+  display: flex;
+  gap: .75rem;
+  padding: 1rem 1.25rem .75rem;
+}
+.highlight-card-badge {
+  align-items: center;
+  background: var(--gray-7);
+  border-radius: 4px;
+  color: var(--color-text-muted);
+  display: flex;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  padding: 2px 7px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.highlight-card-badge.award { background: rgba(252,220,151,.12); color: var(--yellow); }
+.highlight-card-badge.press  { background: rgba(106,176,243,.12); color: var(--theme-blue); }
+.highlight-card-badge.ctf    { background: rgba(146,209,146,.12); color: var(--theme-green); }
+.highlight-card-year { color: var(--color-text-muted); font-size: 13px; font-weight: 400; margin-left: auto; }
+.highlight-card-body { padding: 0 1.25rem 1rem; }
+.highlight-card-title { color: var(--color-text-emphasized); font-size: 1rem; font-weight: 700; line-height: 1.3; margin: 0 0 .4rem; }
+.highlight-card-desc { color: var(--color-text-muted); font-size: .88rem; line-height: 1.65; margin: 0 0 .9rem; }
+.highlight-card-links { display: flex; flex-wrap: wrap; gap: .5rem; }
+.highlight-card-photo { border-top: 1px solid var(--color-border); overflow: hidden; position: relative; }
+.highlight-card-photo img { display: block; height: 380px; object-fit: cover; object-position: center center; width: 100%; transition: transform .3s ease; }
+.highlight-card:hover .highlight-card-photo img { transform: scale(1.015); }
+.highlight-card-photo-caption { background: linear-gradient(to top, rgba(13,13,17,.85) 0%, transparent 100%); bottom: 0; color: var(--color-text-muted); font-size: 12px; left: 0; padding: .75rem 1rem .6rem; position: absolute; right: 0; }
+.highlight-card-video { border-top: 1px solid var(--color-border); position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+.highlight-card-video iframe { border: none; height: 100%; left: 0; position: absolute; top: 0; width: 100%; }
