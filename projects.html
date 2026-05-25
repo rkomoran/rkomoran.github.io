@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rinor Komorani</title>
+  <title>Projects — Rinor Komorani</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
@@ -569,6 +569,15 @@
       transition: border-color .1s, color .1s;
     }
     .tag-btn:hover { border-color: var(--color-border-button-secondary-hover); color: var(--color-text-button-secondary-hover); text-decoration: none; }
+    .tag-private {
+      align-items: center;
+      color: var(--color-text-muted);
+      display: inline-flex;
+      font-size: 13px;
+      font-weight: 500;
+      gap: .3rem;
+      padding: 4px 0;
+    }
 
     /* ── Footer ── */
     .footer {
@@ -643,16 +652,6 @@
       text-decoration: none;
     }
     .about-contact-links a:hover { text-decoration: underline; }
-
-    .song-list { display: flex; flex-direction: column; margin-top: .25rem; }
-    .song-item { border-bottom: 1px solid var(--color-border); }
-    .song-item:last-child { border-bottom: none; }
-    .song-row { align-items: baseline; background: none; border: none; color: var(--color-text); cursor: pointer; display: flex; font-family: var(--font-family); gap: .75rem; justify-content: space-between; padding: 7px 0; text-align: left; width: 100%; }
-    .song-row:hover .song-title, .song-row.playing .song-title { color: var(--color-primary); }
-    .song-embed { display: none; padding-bottom: .5rem; }
-    .song-embed iframe { border-radius: var(--border-radius); display: block; width: 100%; }
-    .song-title { color: var(--color-text-emphasized); font-weight: 600; font-size: .95rem; transition: color .1s; }
-    .song-artist { color: var(--color-text-muted); font-size: .85rem; white-space: nowrap; }
   </style>
 </head>
 <body>
@@ -700,7 +699,7 @@
           <a href="blog.html"><img src="brand_assets/200w.gif" alt="" style="image-rendering:pixelated;width:18px;height:18px;max-width:none;display:inline-block;flex-shrink:0;" /> Log</a>
           <a href="experience.html"><img src="brand_assets/ppfrog-pog-ppfrog.gif" alt="" style="image-rendering:pixelated;width:18px;height:18px;max-width:none;display:inline-block;flex-shrink:0;" /> Experience</a>
           <a href="highlights.html"><img src="brand_assets/frog-chonk.gif" alt="" style="image-rendering:pixelated;width:18px;height:18px;max-width:none;display:inline-block;flex-shrink:0;" /> Highlights</a>
-          <a href="projects.html"><img src="brand_assets/frog-pixel.gif" alt="" style="image-rendering:pixelated;width:18px;height:18px;max-width:none;display:inline-block;flex-shrink:0;" /> Projects</a>
+          <a href="projects.html" class="active"><img src="brand_assets/frog-pixel.gif" alt="" style="image-rendering:pixelated;width:18px;height:18px;max-width:none;display:inline-block;flex-shrink:0;" /> Projects</a>
         </div>
       </div>
 
@@ -719,171 +718,101 @@
     <div class="main-wrapper">
       <div class="main-content">
 
-        <!-- Hero -->
-        <div class="hero">
-          <div class="hero-wrapper">
-            <div class="hero-text">
-              <h1>Hey, I'm Rinor!</h1>
-              <p class="hero-description">
-                I'm a CS + Chemistry student at the University of New Brunswick and a software engineer. I love building things, teaching people, and frogs.
-              </p>
-              <p class="hero-description" style="margin-top: -.75rem; margin-bottom: 1.5rem;">
-                I'm currently working at <a href="experience.html">Introhive</a> as an Associate Software Engineer (co-op), building features in Ruby on Rails.
-              </p>
-              <div class="hero-cta">
-                <a href="mailto:rkomoran@unb.ca" class="button">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                  Contact Me
-                </a>
-                <a href="https://github.com/rkomoran" target="_blank" rel="noopener" class="button secondary">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                  GitHub
-                </a>
-                <a href="Rinor_Komorani_Resume_2026.pdf" target="_blank" rel="noopener" class="button secondary">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                  Resume
-                </a>
+        <!-- Projects -->
+        <div class="section" id="projects">
+          <div class="section-heading">
+            <img src="brand_assets/tumblr_pptw6ud4je1qksv0l_540.gif" alt="night frog" style="border-radius:4px;" />
+            <h2>Projects</h2>
+          </div>
+          <p class="section-desc">Open-source projects I've made over the years.</p>
+          <hr class="section-divider" />
+
+          <div class="project-cards">
+            <div class="project-card">
+              <div class="project-card-year">2024</div>
+              <div class="project-card-title">Froggo's Daily Facts</div>
+              <div class="project-card-desc">Discord bot delivering daily frog facts. Published on top.gg with 100+ users and a 5-star rating in its first month. 99.9% uptime on AWS EC2 with automated restart protocols.</div>
+              <div class="project-card-stack">Python · Discord API · AWS EC2</div>
+              <div class="project-card-links">
+                <a href="https://github.com/rkomoran/frog-bot" target="_blank" rel="noopener" class="tag-btn">Source</a>
+                <a href="https://top.gg" target="_blank" rel="noopener" class="tag-btn">Demo</a>
               </div>
             </div>
-            <div class="hero-image-wrap">
-              <img src="brand_assets/frog.gif" alt="pixel frog" class="hero-image" />
+
+            <div class="project-card">
+              <div class="project-card-year">2023</div>
+              <div class="project-card-title">AI &amp; ML Curriculum</div>
+              <div class="project-card-desc">Designed and taught a university summer camp AI/ML curriculum in Python for high schoolers. Covered on CBC National TV reaching 6M+ viewers. 95% positive student feedback.</div>
+              <div class="project-card-stack">Python · Machine Learning · p5.js</div>
+              <div class="project-card-links">
+                <span class="tag-private">🔒 Private</span>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card-year">2023</div>
+              <div class="project-card-title">Prescription Management System</div>
+              <div class="project-card-desc">Built for Populus Global — used by 1,500+ healthcare professionals across Belize and Barbados. Triaged 100+ Jira tickets and raised test coverage from near-zero to 80%.</div>
+              <div class="project-card-stack">Java · TypeScript · Angular · SQL</div>
+              <div class="project-card-links">
+                <span class="tag-private">🔒 Private</span>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card-year">2025</div>
+              <div class="project-card-title">Domain Security Automation</div>
+              <div class="project-card-desc">Python script on Azure integrating Imperva and Qualys SSL APIs — automated monthly domain security assessments, reducing processing time from 10 hours to minutes at J.D. Irving.</div>
+              <div class="project-card-stack">Python · Azure · Imperva · Qualys</div>
+              <div class="project-card-links">
+                <span class="tag-private">🔒 Private</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="page-article">
 
-          <h2>What I'm Doing Now</h2>
-          <ul>
-            <li>Working full-time at Introhive (co-op, Jan–Aug 2026)</li>
-            <li>Studying for my CCNA</li>
-            <li>Playing Forza Horizon 6</li>
-            <li>Trying to get big in the gym</li>
-            <li>Saturday Market trips + photographing Fredericton</li>
-          </ul>
+        <!-- Skills -->
+        <div class="section" id="skills">
+          <div class="section-heading">
+            <img src="brand_assets/ksdxvlnkwosa1.png" alt="frog" style="height:28px;width:28px;image-rendering:pixelated;" />
+            <h2>Skills</h2>
+          </div>
+          <p class="section-desc">Technologies I've shipped production code with.</p>
+          <hr class="section-divider" />
 
-          <h2>Tools</h2>
-          <h3>Software</h3>
-          <p>This website is a single static HTML file. My editor of choice is <a href="#">VS Code</a>, my terminal is <a href="#">iTerm2</a>, and my browser is <a href="#">Firefox</a>.</p>
-          <h3>Languages &amp; Frameworks</h3>
-          <p>Daily drivers: Ruby on Rails, TypeScript, Python. I've also shipped in Java, C, Angular, and Node.js. I learn whatever the job needs.</p>
-          <h3>Hardware</h3>
-          <p>MacBook Pro M2, 16GB RAM.</p>
-          <p><strong>Gaming PC</strong><br>
-            CPU: AMD Ryzen 7 7800x3D<br>
-            Motherboard: MSI MAG B650 Tomahawk WiFi<br>
-            Memory: CORSAIR Vengeance DDR5 RAM 32GB<br>
-            Storage: SSD 990 PRO NVMe M.2 1TB<br>
-            GPU: PNY GeForce RTX 4090 24GB TF Verto Edition<br>
-            PSU: CORSAIR RM850x<br>
-            Case: CORSAIR 5000D Mid-Tower ATX Case
-          </p>
-          <p><strong>Keyboards</strong><br>
-            HHKB Professional Hybrid Type-S<br>
-            HHKB Professional 2
-          </p>
-          <p><strong>Mouse</strong><br>
-            MX Ergo S
-          </p>
-          <h3>I couldn't do my work without these little dudes:</h3>
-          <img src="" alt="frog moral support" style="border-radius: var(--border-radius); max-width: 400px; margin-top: .25rem;" />
-
-          <h2>Education</h2>
-          <ul>
-            <li>University of New Brunswick — BS Computer Science, Minor in Chemistry (2023–2027) · GPA 4.0</li>
-            <li>University of New Brunswick — BS Chemistry, partial (2017–2019)</li>
-          </ul>
-
-          <h2>Songs</h2>
-          <p style="color:var(--color-text-muted);font-size:.9rem;margin-top:-.25rem;">A few I've had on repeat lately. Click to play.</p>
-
-          <div class="song-list">
-            <div class="song-item">
-              <button class="song-row" data-id="4Dev97TQztwKYRMfR7HZCM">
-                <span class="song-title">Box Turtle, Magnificent Isn't She</span>
-                <span class="song-artist">Lady Radiator</span>
-              </button>
-              <div class="song-embed"></div>
+          <div class="cards">
+            <div class="card">
+              <div class="card-icon-row"><span class="card-emoji">☕</span></div>
+              <div class="card-title">Languages</div>
+              <div class="card-desc">Java · Python · C · Ruby · TypeScript · JavaScript · SQL · Bash · HTML/CSS</div>
             </div>
-            <div class="song-item">
-              <button class="song-row" data-id="55VHbFIq12gENarPYKdxqf">
-                <span class="song-title">Overworld Night</span>
-                <span class="song-artist">Re-Logic</span>
-              </button>
-              <div class="song-embed"></div>
+            <div class="card">
+              <div class="card-icon-row"><span class="card-emoji">🧩</span></div>
+              <div class="card-title">Frameworks</div>
+              <div class="card-desc">React · Angular · Node.js · Ruby on Rails</div>
             </div>
-            <div class="song-item">
-              <button class="song-row" data-id="4telT9zZWgv4d8gD4WZrlA">
-                <span class="song-title">Mistakes Like This</span>
-                <span class="song-artist">Prelow</span>
-              </button>
-              <div class="song-embed"></div>
+            <div class="card">
+              <div class="card-icon-row"><span class="card-emoji">🛠</span></div>
+              <div class="card-title">Tools &amp; Platforms</div>
+              <div class="card-desc">Git · Docker · Kubernetes · AWS · Azure · Linux · Splunk · Jira</div>
             </div>
-            <div class="song-item">
-              <button class="song-row" data-id="14HVpSRZSmH2T9p6Wba7EH">
-                <span class="song-title">The Veldt (Original Mix)</span>
-                <span class="song-artist">deadmau5 & Chris James</span>
-              </button>
-              <div class="song-embed"></div>
+            <div class="card">
+              <div class="card-icon-row"><span class="card-emoji">🔐</span></div>
+              <div class="card-title">Security</div>
+              <div class="card-desc">OWASP Top 10 · CVE patching (XSS, RCE) · Qualys · Imperva · CTF</div>
             </div>
-            <div class="song-item">
-              <button class="song-row" data-id="48vr34351V9Sz1QVxmbYNf">
-                <span class="song-title">Today I Saw The Whole World</span>
-                <span class="song-artist">Pierce The Veil</span>
-              </button>
-              <div class="song-embed"></div>
+            <div class="card">
+              <div class="card-icon-row"><span class="card-emoji">🤖</span></div>
+              <div class="card-title">Machine Learning</div>
+              <div class="card-desc">Python ML pipelines · Curriculum design · p5.js · Data visualization</div>
             </div>
-            <div class="song-item">
-              <button class="song-row" data-id="68hYdj3GepWm2R202KhJT7">
-                <span class="song-title">1901</span>
-                <span class="song-artist">Phoenix</span>
-              </button>
-              <div class="song-embed"></div>
-            </div>
-            <div class="song-item">
-              <button class="song-row" data-id="5QUNGTePBE8qGfWeV0quTW">
-                <span class="song-title">New Beat</span>
-                <span class="song-artist">Toro y Moi</span>
-              </button>
-              <div class="song-embed"></div>
-            </div>
-            <div class="song-item">
-              <button class="song-row" data-id="4F514WgbuukoEW4LFPi1mp">
-                <span class="song-title">Floating Trees</span>
-                <span class="song-artist">C418</span>
-              </button>
-              <div class="song-embed"></div>
+            <div class="card">
+              <div class="card-icon-row"><span class="card-emoji">📚</span></div>
+              <div class="card-title">Teaching</div>
+              <div class="card-desc">200+ students TA'd · 6 CS courses · Competition coaching · Camp instruction</div>
             </div>
           </div>
-
-          <script>
-            (function() {
-              let activeId = null;
-              document.querySelectorAll('.song-row[data-id]').forEach(btn => {
-                btn.addEventListener('click', function() {
-                  const id = this.dataset.id;
-                  const embedDiv = this.nextElementSibling;
-                  if (activeId === id) {
-                    embedDiv.innerHTML = '';
-                    embedDiv.style.display = 'none';
-                    this.classList.remove('playing');
-                    activeId = null;
-                  } else {
-                    document.querySelectorAll('.song-row[data-id]').forEach(b => {
-                      b.classList.remove('playing');
-                      b.nextElementSibling.innerHTML = '';
-                      b.nextElementSibling.style.display = 'none';
-                    });
-                    embedDiv.innerHTML = '<iframe src="https://open.spotify.com/embed/track/' + id + '?utm_source=generator&theme=0" width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>';
-                    embedDiv.style.display = 'block';
-                    this.classList.add('playing');
-                    activeId = id;
-                  }
-                });
-              });
-            })();
-          </script>
-
         </div>
 
       </div><!-- /.main-content -->
