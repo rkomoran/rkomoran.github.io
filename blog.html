@@ -376,6 +376,8 @@
       padding: 2px 8px;
       white-space: nowrap;
     }
+      .frog-corner { bottom:0; left:0; height:80px; image-rendering:auto; pointer-events:none; position:fixed; width:auto; z-index:5; }
+    @media screen and (max-width: 1019px) { .frog-corner { height: 60px; } .main-wrapper { padding-bottom: 70px; } }
   </style>
   <link rel="icon" type="image/png" href="brand_assets/ksdxvlnkwosa1.png" />
 </head>
@@ -481,7 +483,7 @@
     });
   </script>
 
-  <img src="brand_assets/frog-jump.gif" alt="" style="bottom:0;left:0;height:80px;image-rendering:auto;pointer-events:none;position:fixed;width:auto;z-index:5;" />
+  <img src="brand_assets/frog-jump.gif" alt="" class="frog-corner" />
 
 </body>
 </html>
