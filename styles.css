@@ -694,7 +694,7 @@ a.footer-link:hover { color: var(--color-text-link-hover); text-decoration: unde
 .frog-corner-mobile { display: none; }
 @media screen and (max-width: 1019px) {
   .frog-corner { display: none; }
-  .frog-corner-mobile { display: block; text-align: left; padding: 1rem 1.5rem 1.5rem; }
+  .frog-corner-mobile { display: block; position: relative; text-align: left; padding: 1rem 1.5rem 1.5rem; }
   .frog-corner-mobile img { height: 80px; width: auto; image-rendering: auto; -webkit-tap-highlight-color: transparent; cursor: pointer; }
 }
 
@@ -715,6 +715,14 @@ a.footer-link:hover { color: var(--color-text-link-hover); text-decoration: unde
   position: fixed;
   white-space: nowrap;
   z-index: 20;
+}
+
+@media screen and (max-width: 1019px) {
+  .frog-bubble {
+    position: absolute;
+    bottom: calc(100% - 1rem);
+    left: 1.5rem;
+  }
 }
 .frog-bubble::after { border: 6px solid transparent; border-top-color: var(--color-primary); bottom: -14px; content: ''; left: 18px; position: absolute; }
 .frog-bubble::before { border: 6px solid transparent; border-top-color: var(--gray-8); bottom: -11px; content: ''; left: 18px; position: absolute; z-index: 1; }
