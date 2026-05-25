@@ -201,7 +201,14 @@
       transition: opacity .2s ease;
       width: 100%;
     }
-    .photo-grid-item img:hover { opacity: .85; }
+    .photo-grid-item img:hover { opacity: .85; cursor: zoom-in; }
+
+    .lightbox { align-items: center; background: rgba(13,13,17,.92); backdrop-filter: blur(8px); display: flex; inset: 0; justify-content: center; opacity: 0; padding: 1.5rem; pointer-events: none; position: fixed; transition: opacity .25s ease; z-index: 100; }
+    .lightbox.open { opacity: 1; pointer-events: all; }
+    .lightbox-img { border-radius: 8px; box-shadow: 0 24px 80px rgba(0,0,0,.7); max-height: 90vh; max-width: 100%; object-fit: contain; transform: scale(.95); transition: transform .25s ease; }
+    .lightbox.open .lightbox-img { transform: scale(1); }
+    .lightbox-close { align-items: center; background: var(--gray-8); border: 1px solid var(--gray-7); border-radius: 50%; color: var(--gray-3); cursor: pointer; display: flex; height: 36px; justify-content: center; position: absolute; right: 1rem; top: 1rem; transition: background .15s, color .15s; width: 36px; }
+    .lightbox-close:hover { background: var(--gray-7); color: var(--gray-0); }
     .photo-grid-empty {
       color: var(--color-text-muted);
       font-size: .9rem;
@@ -472,9 +479,9 @@
           <hr class="section-divider" />
 
           <div class="photo-grid">
-            <div class="photo-grid-item"><a href="brand_assets/photo-1.jpg" target="_blank" rel="noopener"><img src="brand_assets/photo-1.jpg" alt="" /></a></div>
-            <div class="photo-grid-item"><a href="brand_assets/photo-2.jpg" target="_blank" rel="noopener"><img src="brand_assets/photo-2.jpg" alt="" /></a></div>
-            <div class="photo-grid-item"><a href="brand_assets/photo-3.jpg" target="_blank" rel="noopener"><img src="brand_assets/photo-3.jpg" alt="" /></a></div>
+            <div class="photo-grid-item"><img src="brand_assets/photo-1.jpg" alt="" data-lightbox /></div>
+            <div class="photo-grid-item"><img src="brand_assets/photo-2.jpg" alt="" data-lightbox /></div>
+            <div class="photo-grid-item"><img src="brand_assets/photo-3.jpg" alt="" data-lightbox /></div>
           </div>
         </div>
 
@@ -482,10 +489,35 @@
     </div>
   </div>
 
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+  </div>
+
   <script>
     document.getElementById("mobile-menu-btn").addEventListener("click", function() {
       document.getElementById("mobile-nav").classList.toggle("open");
     });
+
+    (function() {
+      const lightbox = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lightbox-img');
+      const close = () => { lightbox.classList.remove('open'); document.body.style.overflow = ''; };
+
+      document.querySelectorAll('[data-lightbox]').forEach(img => {
+        img.addEventListener('click', function() {
+          lbImg.src = this.src;
+          lightbox.classList.add('open');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      document.getElementById('lightbox-close').addEventListener('click', close);
+      lightbox.addEventListener('click', function(e) { if (e.target === lightbox) close(); });
+      document.addEventListener('keydown', function(e) { if (e.key === 'Escape') close(); });
+    })();
   </script>
 
   <img src="brand_assets/frog-jump.gif" alt="" class="frog-corner" />
