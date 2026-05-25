@@ -249,10 +249,10 @@
         var isOpen = embed.style.display === 'block';
         document.querySelectorAll('.song-embed').forEach(function (e) { e.style.display = 'none'; });
         document.querySelectorAll('.song-row').forEach(function (b) { b.classList.remove('playing'); });
-        if (\!isOpen) {
+        if (!isOpen) {
           embed.style.display = 'block';
           btn.classList.add('playing');
-          if (\!embed.querySelector('iframe')) {
+          if (!embed.querySelector('iframe')) {
             var id = btn.dataset.id;
             embed.innerHTML = '<iframe src="https://open.spotify.com/embed/track/' + id + '?utm_source=generator&theme=0" width="100%" height="80" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>';
           }
