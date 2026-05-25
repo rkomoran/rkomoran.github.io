@@ -103,6 +103,13 @@
     .navbar-logo { border-radius: 50%; height: 28px; min-height: 28px; min-width: 28px; object-fit: cover; width: 28px; }
     .site-name { font-family: var(--font-family-heading); font-size: 15px; font-weight: 600; white-space: nowrap; }
     .navbar-icons { display: flex; gap: 2px; align-items: center; }
+    .mobile-menu-btn { align-items: center; background: none; border: none; border-radius: var(--border-radius); color: var(--gray-4); cursor: pointer; display: flex; height: 38px; justify-content: center; width: 38px; }
+    .mobile-menu-btn:hover { background: var(--color-background-navbar-link-hover); color: var(--gray-0); }
+    .mobile-nav { background: var(--color-background-navbar); border-bottom: 1px solid var(--color-border); display: none; left: 0; padding: .5rem 1rem .75rem; position: fixed; top: var(--navbar-height); width: 100%; z-index: 9; }
+    .mobile-nav.open { display: block; }
+    .mobile-nav a { border-radius: var(--border-radius); color: var(--color-text); display: flex; align-items: center; font-size: 15px; font-weight: 500; gap: .5rem; padding: 7px .4rem; text-decoration: none; }
+    .mobile-nav a:hover { background: var(--color-background-navbar-link-hover); color: var(--color-text-emphasized); }
+    @media screen and (min-width: 1020px) { .mobile-menu-btn { display: none; } .mobile-nav { display: none \!important; } }
     a.navbar-icon { align-items: center; border-radius: var(--border-radius); color: var(--gray-4); display: flex; height: 38px; justify-content: center; text-decoration: none; width: 38px; }
     a.navbar-icon:hover { background: var(--color-background-navbar-link-hover); color: var(--gray-0); text-decoration: none; }
     @media screen and (min-width: 1020px) { .navbar { display: none; } }
@@ -391,8 +398,18 @@
       <a href="mailto:rkomoran@unb.ca" class="navbar-icon" title="Email">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
       </a>
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
     </div>
   </nav>
+
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="blog.html"><img src="brand_assets/200w.gif" alt="" style="image-rendering:pixelated;width:18px;height:18px;max-width:none;display:inline-block;flex-shrink:0;" /> Log</a>
+    <a href="experience.html"><img src="brand_assets/ppfrog-pog-ppfrog.gif" alt="" style="image-rendering:pixelated;width:18px;height:18px;max-width:none;display:inline-block;flex-shrink:0;" /> Experience</a>
+    <a href="highlights.html"><img src="brand_assets/frog-chonk.gif" alt="" style="image-rendering:pixelated;width:18px;height:18px;max-width:none;display:inline-block;flex-shrink:0;" /> Highlights</a>
+    <a href="projects.html"><img src="brand_assets/frog-pixel.gif" alt="" style="image-rendering:pixelated;width:18px;height:18px;max-width:none;display:inline-block;flex-shrink:0;" /> Projects</a>
+  </div>
 
   <div class="layout">
     <aside class="sidebar">
@@ -458,7 +475,13 @@
     </div>
   </div>
 
-  <img src="brand_assets/frog-jump.gif" alt="" style="bottom:0;left:0;height:120px;image-rendering:auto;pointer-events:none;position:fixed;width:auto;z-index:5;" />
+  <script>
+    document.getElementById("mobile-menu-btn").addEventListener("click", function() {
+      document.getElementById("mobile-nav").classList.toggle("open");
+    });
+  </script>
+
+  <img src="brand_assets/frog-jump.gif" alt="" style="bottom:0;left:0;height:80px;image-rendering:auto;pointer-events:none;position:fixed;width:auto;z-index:5;" />
 
 </body>
 </html>
