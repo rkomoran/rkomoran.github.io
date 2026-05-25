@@ -32,8 +32,10 @@ document.getElementById('mobile-menu-btn')?.addEventListener('click', function (
   const frogMobileWrap = document.querySelector('.frog-corner-mobile');
   const frogMobile = frogMobileWrap && frogMobileWrap.querySelector('img');
   if (frogMobile) {
-    // Move bubble inside the mobile container so it scrolls with the frog
-    frogMobileWrap.appendChild(bubble);
+    // On mobile, move bubble inside the container so it scrolls with the frog
+    if (window.matchMedia('(max-width: 1019px)').matches) {
+      frogMobileWrap.appendChild(bubble);
+    }
     frogMobile.style.cursor = 'pointer';
     frogMobile.style.webkitTapHighlightColor = 'transparent';
     frogMobile.addEventListener('click', speak);
