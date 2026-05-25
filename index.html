@@ -7,56 +7,109 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
+
   <div class="container">
 
     <header>
-      <div class="header-inner">
+      <div class="header-photo-wrap">
         <img src="images/profile.jpg" alt="Rinor Komorani" class="profile-photo" />
-        <div class="header-text">
-          <h1>Rinor Komorani</h1>
-          <p class="tagline">CS student &amp; software engineer &nbsp;·&nbsp; Fredericton, NB</p>
-          <div class="links">
-            <a href="mailto:rkomoran@unb.ca">rkomoran@unb.ca</a>
-            <a href="https://linkedin.com/in/rinorkomorani" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="https://github.com/rkomoran" target="_blank" rel="noopener">GitHub</a>
-          </div>
-        </div>
+      </div>
+      <div class="header-body">
+        <h1>Rinor Komorani</h1>
+        <p class="tagline">Computer Science &amp; Chemistry &nbsp;·&nbsp; University of New Brunswick</p>
+        <p class="location">Fredericton, NB &nbsp;·&nbsp; GPA: 4.0 &nbsp;·&nbsp; Expected May 2027</p>
+        <nav class="contact-links">
+          <a href="mailto:rkomoran@unb.ca">rkomoran@unb.ca</a>
+          <a href="https://linkedin.com/in/rinorkomorani" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/rkomoran" target="_blank" rel="noopener">GitHub</a>
+        </nav>
       </div>
     </header>
 
     <main>
 
       <section>
-        <h2>About</h2>
+        <h2>
+          <svg class="frog-icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="0" y="8" width="2" height="2" fill="currentColor"/>
+            <rect x="14" y="8" width="2" height="2" fill="currentColor"/>
+            <rect x="2" y="6" width="2" height="2" fill="currentColor"/>
+            <rect x="12" y="6" width="2" height="2" fill="currentColor"/>
+            <rect x="4" y="4" width="8" height="2" fill="currentColor"/>
+            <rect x="2" y="6" width="12" height="6" fill="currentColor"/>
+            <rect x="4" y="8" width="2" height="2" fill="#a8d8a8"/>
+            <rect x="10" y="8" width="2" height="2" fill="#a8d8a8"/>
+            <rect x="4" y="12" width="3" height="2" fill="currentColor"/>
+            <rect x="9" y="12" width="3" height="2" fill="currentColor"/>
+          </svg>
+          About
+        </h2>
         <p>
-          I'm a Computer Science student at the University of New Brunswick (GPA: 4.0, expected May 2027),
-          with a minor in Chemistry. I enjoy building software that solves real problems — from enterprise
-          CRM platforms to Discord bots that deliver daily frog facts. I've interned as a software engineer,
-          security analyst, and teacher, and I got featured on CBC National News for teaching AI to high schoolers.
+          I'm a Computer Science student with a minor in Chemistry, interested in building
+          software that solves real problems — from enterprise CRM platforms serving 200+ companies to
+          a Discord bot that delivers daily frog facts with 99.9% uptime.
+        </p>
+        <p>
+          I've worked as a software engineer at Introhive, a security analyst at J.D. Irving,
+          and a TA for 200+ students across 6 CS courses. I was also featured on
+          <em>CBC National News</em> for teaching AI and machine learning to high schoolers.
         </p>
       </section>
 
       <section>
-        <h2>Education</h2>
+        <h2>
+          <svg class="frog-icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="0" y="8" width="2" height="2" fill="currentColor"/>
+            <rect x="14" y="8" width="2" height="2" fill="currentColor"/>
+            <rect x="2" y="6" width="2" height="2" fill="currentColor"/>
+            <rect x="12" y="6" width="2" height="2" fill="currentColor"/>
+            <rect x="4" y="4" width="8" height="2" fill="currentColor"/>
+            <rect x="2" y="6" width="12" height="6" fill="currentColor"/>
+            <rect x="4" y="8" width="2" height="2" fill="#a8d8a8"/>
+            <rect x="10" y="8" width="2" height="2" fill="#a8d8a8"/>
+            <rect x="4" y="12" width="3" height="2" fill="currentColor"/>
+            <rect x="9" y="12" width="3" height="2" fill="currentColor"/>
+          </svg>
+          Education
+        </h2>
         <div class="entry">
-          <div class="row">
-            <strong>University of New Brunswick</strong>
-            <span class="date">Expected May 2027</span>
+          <div class="entry-row">
+            <div>
+              <div class="entry-title">University of New Brunswick</div>
+              <div class="entry-sub">BS Computer Science, Minor in Chemistry &mdash; GPA: 4.0</div>
+            </div>
+            <div class="entry-date">Expected May 2027</div>
           </div>
-          <div class="sub">BS in Computer Science, Minor in Chemistry &mdash; GPA: 4.0</div>
         </div>
       </section>
 
       <section>
-        <h2>Experience</h2>
+        <h2>
+          <svg class="frog-icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="0" y="8" width="2" height="2" fill="currentColor"/>
+            <rect x="14" y="8" width="2" height="2" fill="currentColor"/>
+            <rect x="2" y="6" width="2" height="2" fill="currentColor"/>
+            <rect x="12" y="6" width="2" height="2" fill="currentColor"/>
+            <rect x="4" y="4" width="8" height="2" fill="currentColor"/>
+            <rect x="2" y="6" width="12" height="6" fill="currentColor"/>
+            <rect x="4" y="8" width="2" height="2" fill="#a8d8a8"/>
+            <rect x="10" y="8" width="2" height="2" fill="#a8d8a8"/>
+            <rect x="4" y="12" width="3" height="2" fill="currentColor"/>
+            <rect x="9" y="12" width="3" height="2" fill="currentColor"/>
+          </svg>
+          Experience
+        </h2>
 
         <div class="entry">
-          <div class="row">
-            <strong>Associate Software Engineer (Co-op) &mdash; Introhive</strong>
-            <span class="date">Jan&ndash;Aug 2026</span>
+          <div class="entry-row">
+            <div>
+              <div class="entry-title">Associate Software Engineer (Co-op)</div>
+              <div class="entry-sub">Introhive &mdash; Fredericton, NB</div>
+            </div>
+            <div class="entry-date">Jan – Aug 2026</div>
           </div>
           <ul>
             <li>Engineered address normalization and backfill logic in a Ruby on Rails CRM platform, correcting malformed UK address data across 45+ production environments and 2.8M+ records with automated collision handling and rollback tracking.</li>
@@ -65,19 +118,25 @@
         </div>
 
         <div class="entry">
-          <div class="row">
-            <strong>Robotics &amp; Programming Coach &mdash; STEMBlock</strong>
-            <span class="date">Sept&ndash;Dec 2025</span>
+          <div class="entry-row">
+            <div>
+              <div class="entry-title">Robotics &amp; Programming Coach</div>
+              <div class="entry-sub">STEMBlock &mdash; Fredericton, NB</div>
+            </div>
+            <div class="entry-date">Sept – Dec 2025</div>
           </div>
           <ul>
-            <li>Led weekly robotics and Python coaching sessions for 20+ students, designing competition prep curriculum that advanced teams to regional robotics events.</li>
+            <li>Led weekly robotics and Python sessions for 20+ students, designing competition prep curriculum that advanced teams to regional robotics events.</li>
           </ul>
         </div>
 
         <div class="entry">
-          <div class="row">
-            <strong>Security Analyst Intern &mdash; J.D. Irving, Limited</strong>
-            <span class="date">Jan&ndash;Apr 2025</span>
+          <div class="entry-row">
+            <div>
+              <div class="entry-title">Security Analyst Intern</div>
+              <div class="entry-sub">J.D. Irving, Limited &mdash; Fredericton, NB</div>
+            </div>
+            <div class="entry-date">Jan – Apr 2025</div>
           </div>
           <ul>
             <li>Built a Python script on Azure integrating Imperva and Qualys SSL APIs, automating monthly domain security assessments and reducing processing time from 10 hours to minutes.</li>
@@ -86,68 +145,100 @@
         </div>
 
         <div class="entry">
-          <div class="row">
-            <strong>Co-op Associate Software Engineer &mdash; Introhive</strong>
-            <span class="date">Sept&ndash;Dec 2024</span>
+          <div class="entry-row">
+            <div>
+              <div class="entry-title">Teaching Assistant</div>
+              <div class="entry-sub">University of New Brunswick &mdash; Fredericton, NB</div>
+            </div>
+            <div class="entry-date">May 2024 – Dec 2025</div>
+          </div>
+          <ul>
+            <li>Supported 200+ students across 6 core CS courses (Java, C, databases) through labs and office hours, earning a Faculty Teaching Award for a 20% increase in average course performance.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-row">
+            <div>
+              <div class="entry-title">Co-op Associate Software Engineer</div>
+              <div class="entry-sub">Introhive &mdash; Fredericton, NB</div>
+            </div>
+            <div class="entry-date">Sept – Dec 2024</div>
           </div>
           <ul>
             <li>Led Angular 16&rarr;17 migration for a core enterprise application, refactoring 50,000+ lines across 200+ components while maintaining 98% test coverage.</li>
-            <li>Identified and patched 15+ critical CVEs including XSS and RCE vulnerabilities, hardening the security posture of a production enterprise application.</li>
+            <li>Identified and patched 15+ critical CVEs including XSS and RCE vulnerabilities, hardening a production enterprise application.</li>
           </ul>
         </div>
 
         <div class="entry">
-          <div class="row">
-            <strong>Teaching Assistant &mdash; University of New Brunswick</strong>
-            <span class="date">May 2024&ndash;Dec 2025</span>
+          <div class="entry-row">
+            <div>
+              <div class="entry-title">Co-op Software Developer</div>
+              <div class="entry-sub">Populus Global Solutions Inc. &mdash; Fredericton, NB</div>
+            </div>
+            <div class="entry-date">Sept – Dec 2023</div>
           </div>
           <ul>
-            <li>Supported 200+ students across 6 core CS courses (Java, C, databases) through labs and office hours, earning a Faculty Teaching Award for a measurable 20% increase in average course performance.</li>
-          </ul>
-        </div>
-
-        <div class="entry">
-          <div class="row">
-            <strong>Co-op Software Developer &mdash; Populus Global Solutions Inc.</strong>
-            <span class="date">Sept&ndash;Dec 2023</span>
-          </div>
-          <ul>
-            <li>Built a web-based prescription management system (Java, TypeScript, SQL, Angular), eliminating prescription errors for 1,500+ healthcare professionals across Belize and Barbados.</li>
+            <li>Built a prescription management system (Java, TypeScript, SQL, Angular) used by 1,500+ healthcare professionals across Belize and Barbados.</li>
             <li>Triaged 100+ Jira tickets, cutting the backlog by 30%. Integrated JUnit from scratch, raising coverage from near-zero to 80%.</li>
           </ul>
         </div>
 
         <div class="entry">
-          <div class="row">
-            <strong>Instructor and Course Developer &mdash; University of New Brunswick</strong>
-            <span class="date">June&ndash;Sept 2023</span>
+          <div class="entry-row">
+            <div>
+              <div class="entry-title">Instructor and Course Developer</div>
+              <div class="entry-sub">University of New Brunswick &mdash; Fredericton, NB</div>
+            </div>
+            <div class="entry-date">June – Sept 2023</div>
           </div>
           <ul>
-            <li>Featured on CBC National News for teaching an AI and Machine Learning in Python course to high school students, reaching 6M+ viewers.</li>
-            <li>Led p5.js workshops for 150+ students, resulting in a 95% positive feedback rate.</li>
+            <li>Featured on CBC National News for teaching AI and Machine Learning in Python to high schoolers, reaching 6M+ viewers.</li>
+            <li>Led p5.js workshops for 150+ students with a 95% positive feedback rate.</li>
           </ul>
         </div>
 
       </section>
 
       <section>
-        <h2>Projects</h2>
+        <h2>
+          <svg class="frog-icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="0" y="8" width="2" height="2" fill="currentColor"/>
+            <rect x="14" y="8" width="2" height="2" fill="currentColor"/>
+            <rect x="2" y="6" width="2" height="2" fill="currentColor"/>
+            <rect x="12" y="6" width="2" height="2" fill="currentColor"/>
+            <rect x="4" y="4" width="8" height="2" fill="currentColor"/>
+            <rect x="2" y="6" width="12" height="6" fill="currentColor"/>
+            <rect x="4" y="8" width="2" height="2" fill="#a8d8a8"/>
+            <rect x="10" y="8" width="2" height="2" fill="#a8d8a8"/>
+            <rect x="4" y="12" width="3" height="2" fill="currentColor"/>
+            <rect x="9" y="12" width="3" height="2" fill="currentColor"/>
+          </svg>
+          Projects
+        </h2>
 
         <div class="entry">
-          <div class="row">
-            <strong><a href="https://github.com/rkomoran/frog-bot" target="_blank" rel="noopener">Froggo's Daily Facts</a></strong>
+          <div class="entry-row">
+            <div>
+              <div class="entry-title">
+                <a href="https://github.com/rkomoran/frog-bot" target="_blank" rel="noopener">Froggo's Daily Facts</a>
+              </div>
+              <div class="entry-sub">Python &middot; Discord API &middot; AWS EC2</div>
+            </div>
           </div>
-          <div class="sub">Python &middot; Discord API &middot; AWS EC2</div>
           <ul>
-            <li>Discord bot that delivers daily facts and frog-related content. Published on top.gg with 100+ users and a 5-star rating within the first month. 99.9% uptime on AWS EC2.</li>
+            <li>Discord bot delivering daily facts and frog content. Published on top.gg with 100+ users and a 5-star rating in the first month. 99.9% uptime on AWS EC2 with automated restart protocols.</li>
           </ul>
         </div>
 
         <div class="entry">
-          <div class="row">
-            <strong>AI &amp; Machine Learning Course</strong>
+          <div class="entry-row">
+            <div>
+              <div class="entry-title">AI &amp; Machine Learning Course</div>
+              <div class="entry-sub">Python &middot; Machine Learning &middot; CBC National News</div>
+            </div>
           </div>
-          <div class="sub">Python &middot; Machine Learning &middot; CBC National News</div>
           <ul>
             <li>Designed and taught an AI/ML curriculum for a university summer camp, covered by CBC National TV reaching 6M+ viewers.</li>
           </ul>
@@ -156,28 +247,57 @@
       </section>
 
       <section>
-        <h2>Skills</h2>
-        <div class="skills">
-          <div>
+        <h2>
+          <svg class="frog-icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="0" y="8" width="2" height="2" fill="currentColor"/>
+            <rect x="14" y="8" width="2" height="2" fill="currentColor"/>
+            <rect x="2" y="6" width="2" height="2" fill="currentColor"/>
+            <rect x="12" y="6" width="2" height="2" fill="currentColor"/>
+            <rect x="4" y="4" width="8" height="2" fill="currentColor"/>
+            <rect x="2" y="6" width="12" height="6" fill="currentColor"/>
+            <rect x="4" y="8" width="2" height="2" fill="#a8d8a8"/>
+            <rect x="10" y="8" width="2" height="2" fill="#a8d8a8"/>
+            <rect x="4" y="12" width="3" height="2" fill="currentColor"/>
+            <rect x="9" y="12" width="3" height="2" fill="currentColor"/>
+          </svg>
+          Skills
+        </h2>
+        <div class="skills-table">
+          <div class="skill-row">
             <span class="skill-label">Languages</span>
-            Java, Python, C, Ruby, TypeScript, JavaScript, SQL, Bash, HTML/CSS
+            <span>Java, Python, C, Ruby, TypeScript, JavaScript, SQL, Bash, HTML/CSS</span>
           </div>
-          <div>
+          <div class="skill-row">
             <span class="skill-label">Frameworks</span>
-            React, Angular, Node.js, Ruby on Rails
+            <span>React, Angular, Node.js, Ruby on Rails</span>
           </div>
-          <div>
+          <div class="skill-row">
             <span class="skill-label">Tools</span>
-            Git, GitLab, Docker, Kubernetes, AWS, Linux, Splunk, Jira
+            <span>Git, GitLab, Docker, Kubernetes, AWS, Linux, Splunk, Jira</span>
           </div>
         </div>
       </section>
 
       <section>
-        <h2>Activities</h2>
+        <h2>
+          <svg class="frog-icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="0" y="8" width="2" height="2" fill="currentColor"/>
+            <rect x="14" y="8" width="2" height="2" fill="currentColor"/>
+            <rect x="2" y="6" width="2" height="2" fill="currentColor"/>
+            <rect x="12" y="6" width="2" height="2" fill="currentColor"/>
+            <rect x="4" y="4" width="8" height="2" fill="currentColor"/>
+            <rect x="2" y="6" width="12" height="6" fill="currentColor"/>
+            <rect x="4" y="8" width="2" height="2" fill="#a8d8a8"/>
+            <rect x="10" y="8" width="2" height="2" fill="#a8d8a8"/>
+            <rect x="4" y="12" width="3" height="2" fill="currentColor"/>
+            <rect x="9" y="12" width="3" height="2" fill="currentColor"/>
+          </svg>
+          Activities
+        </h2>
         <div class="entry">
-          <div class="row">
-            <strong>CyberSci Regionals 2024</strong>
+          <div class="entry-row">
+            <div class="entry-title">CyberSci Regionals 2024</div>
+            <div class="entry-date">2024</div>
           </div>
           <ul>
             <li>Third place in a regional CTF competition among 11 teams from top Atlantic Canadian universities.</li>
@@ -188,9 +308,24 @@
     </main>
 
     <footer>
+      <div class="footer-frog" aria-hidden="true">
+        <svg viewBox="0 0 32 20" xmlns="http://www.w3.org/2000/svg" width="32" height="20">
+          <rect x="0" y="10" width="4" height="4" fill="#5a8a5a"/>
+          <rect x="28" y="10" width="4" height="4" fill="#5a8a5a"/>
+          <rect x="4" y="6" width="4" height="4" fill="#5a8a5a"/>
+          <rect x="24" y="6" width="4" height="4" fill="#5a8a5a"/>
+          <rect x="8" y="4" width="16" height="4" fill="#5a8a5a"/>
+          <rect x="4" y="8" width="24" height="8" fill="#5a8a5a"/>
+          <rect x="8" y="10" width="4" height="4" fill="#a8d8a8"/>
+          <rect x="20" y="10" width="4" height="4" fill="#a8d8a8"/>
+          <rect x="8" y="16" width="6" height="4" fill="#5a8a5a"/>
+          <rect x="18" y="16" width="6" height="4" fill="#5a8a5a"/>
+        </svg>
+      </div>
       <p>&copy; 2026 Rinor Komorani &nbsp;&middot;&nbsp; <a href="mailto:rkomoran@unb.ca">rkomoran@unb.ca</a></p>
     </footer>
 
   </div>
+
 </body>
 </html>
