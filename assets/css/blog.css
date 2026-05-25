@@ -156,8 +156,8 @@
 .highlight-card-badge.award { background: rgba(252,220,151,.12); color: var(--yellow); }
 .highlight-card-badge.press  { background: rgba(106,176,243,.12); color: var(--theme-blue); }
 .highlight-card-badge.ctf    { background: rgba(146,209,146,.12); color: var(--theme-green); }
-.highlight-card-year { color: var(--color-text-muted); font-size: 13px; font-weight: 400; margin-left: auto; }
-.highlight-card-body { padding: 0 1.25rem 1rem; }
+.highlight-card-year { color: var(--color-text-muted); font-size: 12px; font-weight: 400; display: block; margin-top: .3rem; letter-spacing: .02em; }
+.highlight-card-body { padding: 1rem 1.25rem 1rem; }
 .highlight-card-title { color: var(--color-text-emphasized); font-size: 1rem; font-weight: 700; line-height: 1.3; margin: 0 0 .4rem; }
 .highlight-card-desc { color: var(--color-text-muted); font-size: .88rem; line-height: 1.65; margin: 0 0 .9rem; }
 .highlight-card-links { display: flex; flex-wrap: wrap; gap: .5rem; }
