@@ -717,21 +717,21 @@ a.footer-link:hover { color: var(--color-text-link-hover); text-decoration: unde
   z-index: 20;
 }
 
-@media screen and (max-width: 1019px) {
-  .frog-bubble {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    display: none;
-    margin-bottom: .5rem;
-  }
-  .frog-bubble.visible {
-    display: inline-block;
-  }
-}
 .frog-bubble::after { border: 6px solid transparent; border-top-color: var(--color-primary); bottom: -14px; content: ''; left: 18px; position: absolute; }
 .frog-bubble::before { border: 6px solid transparent; border-top-color: var(--gray-8); bottom: -11px; content: ''; left: 18px; position: absolute; z-index: 1; }
 .frog-bubble.visible { display: block; }
+
+/* Mobile bubble sits above the frog in normal flow */
+.frog-corner-mobile .frog-bubble {
+  position: relative;
+  bottom: auto;
+  left: auto;
+  margin-bottom: .5rem;
+  display: none;
+}
+.frog-corner-mobile .frog-bubble.visible {
+  display: inline-block;
+}
 .frog-bubble.hide { animation: frogFade .3s ease forwards; }
 @keyframes frogPop { from { opacity: 0; transform: scale(.6) translateY(6px); } to { opacity: 1; transform: scale(1) translateY(0); } }
 @keyframes frogFade { from { opacity: 1; } to { opacity: 0; } }

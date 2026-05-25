@@ -6,12 +6,10 @@ document.getElementById('mobile-menu-btn')?.addEventListener('click', function (
 // Frog chat bubble
 (function () {
   const sounds = ['*ribbit*', '*croak*', '*brrp*', '*ribbit ribbit*', '*CROAK*', '*mrrp*', '*ribbit?*', '*...ribbit*'];
-  const bubble = document.getElementById('frog-bubble');
-  if (!bubble) return;
 
   let timer;
 
-  function speak() {
+  function speak(bubble) {
     clearTimeout(timer);
     bubble.classList.remove('hide');
     bubble.classList.add('visible');
@@ -22,22 +20,21 @@ document.getElementById('mobile-menu-btn')?.addEventListener('click', function (
     }, 2000);
   }
 
-  const frogCorner = document.querySelector('.frog-corner');
-  if (frogCorner) {
+  // Desktop fixed frog
+  var frogCorner = document.querySelector('.frog-corner');
+  var bubbleDesktop = document.getElementById('frog-bubble');
+  if (frogCorner && bubbleDesktop) {
     frogCorner.style.pointerEvents = 'auto';
     frogCorner.style.cursor = 'pointer';
-    frogCorner.addEventListener('click', speak);
+    frogCorner.addEventListener('click', function () { speak(bubbleDesktop); });
   }
 
-  const frogMobileWrap = document.querySelector('.frog-corner-mobile');
-  const frogMobile = frogMobileWrap && frogMobileWrap.querySelector('img');
-  if (frogMobile) {
-    // On mobile, move bubble inside the container so it scrolls with the frog
-    if (window.matchMedia('(max-width: 1019px)').matches) {
-      frogMobileWrap.insertBefore(bubble, frogMobile);
-    }
+  // Mobile in-flow frog
+  var frogMobile = document.querySelector('.frog-corner-mobile img');
+  var bubbleMobile = document.getElementById('frog-bubble-mobile');
+  if (frogMobile && bubbleMobile) {
     frogMobile.style.cursor = 'pointer';
     frogMobile.style.webkitTapHighlightColor = 'transparent';
-    frogMobile.addEventListener('click', speak);
+    frogMobile.addEventListener('click', function () { speak(bubbleMobile); });
   }
 })();
