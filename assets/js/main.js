@@ -34,7 +34,7 @@ document.getElementById('mobile-menu-btn')?.addEventListener('click', function (
   if (frogMobile) {
     // On mobile, move bubble inside the container so it scrolls with the frog
     if (window.matchMedia('(max-width: 1019px)').matches) {
-      frogMobileWrap.appendChild(bubble);
+      frogMobileWrap.insertBefore(bubble, frogMobile);
     }
     frogMobile.style.cursor = 'pointer';
     frogMobile.style.webkitTapHighlightColor = 'transparent';
