@@ -719,9 +719,14 @@ a.footer-link:hover { color: var(--color-text-link-hover); text-decoration: unde
 
 @media screen and (max-width: 1019px) {
   .frog-bubble {
-    position: absolute;
-    bottom: calc(100% - 1rem);
-    left: 1.5rem;
+    position: relative;
+    bottom: auto;
+    left: auto;
+    display: none;
+    margin-bottom: .5rem;
+  }
+  .frog-bubble.visible {
+    display: inline-block;
   }
 }
 .frog-bubble::after { border: 6px solid transparent; border-top-color: var(--color-primary); bottom: -14px; content: ''; left: 18px; position: absolute; }
