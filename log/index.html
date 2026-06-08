@@ -168,9 +168,14 @@
 
     function render() {
       var start = (page - 1) * PER_PAGE;
+      var lastVisible = null;
       entries.forEach(function (el, i) {
-        el.style.display = (i >= start && i < start + PER_PAGE) ? '' : 'none';
+        var visible = i >= start && i < start + PER_PAGE;
+        el.style.display = visible ? '' : 'none';
+        el.classList.remove('is-last-visible');
+        if (visible) lastVisible = el;
       });
+      if (lastVisible) lastVisible.classList.add('is-last-visible');
       renderNav();
     }
 

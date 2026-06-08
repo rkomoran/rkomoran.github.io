@@ -6,7 +6,7 @@
   gap: .5rem 1rem;
   padding: .75rem 0;
 }
-.log-entry:last-of-type { border-bottom: none; }
+.log-entry.is-last-visible { border-bottom: none; }
 .log-entry time {
   color: var(--color-text-muted);
   font-size: .82rem;
