@@ -91,26 +91,38 @@
           <p class="section-desc">What I'm up to. Updates, thoughts, things I'm learning.</p>
           <hr class="section-divider" />
 
-          <div class="log-entry">
-            <time>June 8, 2026</time>
-            <div class="log-entry-body">
-              Still studying for the CCNA. Jeremy, you the GOAT (iykyk). Subnetting is starting to make sense, I've just got to keep practicing it. I also found a free source to practice web security on <a href="https://portswigger.net/web-security/learning-paths">portswigger</a>, I'm gonna take some shots at it.
+          <div id="log-entries">
+            <div class="log-entry" data-log-entry>
+              <time>June 8, 2026</time>
+              <div class="log-entry-body">
+                Still studying for the CCNA. Jeremy, you the GOAT (iykyk). Subnetting is starting to make sense, I've just got to keep practicing it. I also found a free source to practice web security on <a href="https://portswigger.net/web-security/learning-paths">portswigger</a>, I'm gonna take some shots at it.
+              </div>
+            </div>
+
+            <div class="log-entry" data-log-entry>
+              <time>May 28, 2026</time>
+              <div class="log-entry-body">
+                I found a blue DSi XL at Value Village today. The screen looked very scratched up but it turned out to be the screen protector. Took it off and it's in pristine condition. Brandon, I'll take good care of it :)
+              </div>
+            </div>
+
+            <div class="log-entry" data-log-entry>
+              <time>May 25, 2026</time>
+              <div class="log-entry-body">
+                Started studying for the CCNA. I never really understood networking. The internet seems magic to me. I guess this is why I'm going for this cert and to be more open about what I can do in my career.
+              </div>
+            </div>
+
+            <div class="log-entry" data-log-entry>
+              <time>May 1, 2026</time>
+              <div class="log-entry-body">
+                Placeholder entry — delete me when done previewing pagination.
+              </div>
             </div>
           </div>
 
-          <div class="log-entry">
-            <time>May 28, 2026</time>
-            <div class="log-entry-body">
-              I found a blue DSi XL at Value Village today. The screen looked very scratched up but it turned out to be the screen protector. Took it off and it's in pristine condition. Brandon, I'll take good care of it :)
-            </div>
-          </div>
 
-          <div class="log-entry">
-            <time>May 25, 2026</time>
-            <div class="log-entry-body">
-              Started studying for the CCNA. I never really understood networking. The internet seems magic to me. I guess this is why I'm going for this cert and to be more open about what I can do in my career.
-            </div>
-          </div>
+          <div class="log-pagination" id="log-pagination"></div>
 
         </div>
 
@@ -145,6 +157,44 @@
   <div class="frog-bubble" id="frog-bubble"></div>
   <div class="frog-corner-mobile"><div class="frog-bubble" id="frog-bubble-mobile"></div><img src="../assets/images/frog-jump.gif" alt="" /></div>
   <script src="../assets/js/main.js"></script>
+  <script>
+  (function () {
+    var PER_PAGE = 3;
+    var entries = Array.from(document.querySelectorAll('[data-log-entry]'));
+    var nav = document.getElementById('log-pagination');
+    var page = 1;
+
+    function totalPages() { return Math.ceil(entries.length / PER_PAGE); }
+
+    function render() {
+      var start = (page - 1) * PER_PAGE;
+      entries.forEach(function (el, i) {
+        el.style.display = (i >= start && i < start + PER_PAGE) ? '' : 'none';
+      });
+      renderNav();
+    }
+
+    function renderNav() {
+      var total = totalPages();
+      nav.innerHTML = '';
+      if (total <= 1) return;
+      for (var i = 1; i <= total; i++) {
+        var btn = document.createElement('button');
+        btn.className = 'log-page-btn' + (i === page ? ' active' : '');
+        btn.textContent = i;
+        btn.setAttribute('aria-label', 'Page ' + i);
+        btn.dataset.p = i;
+        btn.addEventListener('click', function () {
+          page = +this.dataset.p;
+          render();
+        });
+        nav.appendChild(btn);
+      }
+    }
+
+    render();
+  })();
+  </script>
   <script>
   (function () {
     var lightbox = document.getElementById('lightbox');
