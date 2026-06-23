@@ -343,6 +343,7 @@ a.navbar-icon:hover { background: var(--color-background-navbar-link-hover); col
   padding: 1px 0;
 }
 .sidebar-connected-links a:hover { color: var(--gray-0); text-decoration: none; }
+.sidebar-copyright { color: var(--color-text-muted); font-size: 13px; font-weight: 400; padding: 1px 0; }
 
 /* ── Main content ── */
 .main-wrapper { min-height: 100vh; }
